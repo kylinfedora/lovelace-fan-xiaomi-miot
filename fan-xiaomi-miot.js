@@ -475,7 +475,7 @@ class fanXiaomiMiotCard extends LitElement {
       });
     }
 
-    // 속도 조절시 전원이 꺼져있으면 켜기
+    // 调速时如果出于电源关闭状态，先打开风扇
     if (btn.name == 'speed_slider' && state.attributes[this.btns.power.prop] == false) {
       this._toggle('click', state, this.btns.power, true);
     }
