@@ -463,7 +463,7 @@ class fanXiaomiMiotCard extends LitElement {
         display: grid;
         grid-template-rows: var(--card--grid-rows, min-content, 30px, 30px, 30px);
         grid-template-columns: var(--card--grid-columns, repeat(5, 1fr));
-        grid-template-areas: var(--card--grid-areas, "n n n n n" "p s hs ha t" "o m vs va h" "lock al bc");
+        grid-template-areas: var(--card--grid-areas, "n n n n n" "p s hs ha t" "o m vs va h");
         gap: var(--card-grid-gap, 6px 6px);
         align-items: center;
         place-content: space-between;
