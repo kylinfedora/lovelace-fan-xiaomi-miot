@@ -539,7 +539,7 @@ class fanXiaomiMiotCard extends LitElement {
       // .locked {       grid-area: a; position: relative; width: 50%; left: 50%; }
       .alarm {        grid-area: al; }
       .locked {       grid-area: lock; }
-      .back_to_center {grid-area: bc; }
+      // .back_to_center {grid-area: bc; }
 
       .hide,
       .state {
