@@ -535,10 +535,8 @@ class fanXiaomiMiotCard extends LitElement {
       .swing_up {     grid-area: va; position: relative; width: 50%; left: 50%; }
       .temperature  { grid-area: t; cursor: default; }
       .humidity {     grid-area: h; cursor: default; }
-      // .alarm {        grid-area: a; position: relative; width: 50%; }
-      // .locked {       grid-area: a; position: relative; width: 50%; left: 50%; }
-      .alarm {        grid-area: al; }
-      .locked {       grid-area: lock; }
+      .alarm {        grid-area: a; position: relative; width: 50%; }
+      .locked {       grid-area: a; position: relative; width: 50%; left: 50%; }
       // .back_to_center {grid-area: bc; }
 
       .hide,
