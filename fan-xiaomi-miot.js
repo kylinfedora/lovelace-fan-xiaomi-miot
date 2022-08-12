@@ -463,7 +463,7 @@ class fanXiaomiMiotCard extends LitElement {
         display: grid;
         grid-template-rows: var(--card--grid-rows, min-content, 30px, 30px, 30px);
         grid-template-columns: var(--card--grid-columns, repeat(5, 1fr));
-        grid-template-areas: var(--card--grid-areas, "n n n n bc" "p s hs ha t" "o m vs va h");
+        grid-template-areas: var(--card--grid-areas, "n n n n n" "p sp sd hs ha" "lock o m vs va" "bc al t h bc");
         gap: var(--card-grid-gap, 6px 6px);
         align-items: center;
         place-content: space-between;
@@ -520,9 +520,9 @@ class fanXiaomiMiotCard extends LitElement {
       .title {        grid-area: n; color: var(--primary-text-color) }
       .power {        grid-area: p; }
       .mode {         grid-area: m; }
-      .speed {        grid-area: s; }
-      .speed_down {   grid-area: s; position: relative; width: 50%; }
-      .speed_up {     grid-area: s; position: relative; width: 50%; left: 50%;}
+      // .speed {        grid-area: s; }
+      .speed_down {   grid-area: sd; }
+      .speed_up {     grid-area: su; }
       .speed_slider { grid-area: n; opacity: 0.5; }
       .off_delay_time { grid-area: o; }
       .hswing {       grid-area: hs; }
@@ -535,8 +535,8 @@ class fanXiaomiMiotCard extends LitElement {
       .swing_up {     grid-area: va; position: relative; width: 50%; left: 50%; }
       .temperature  { grid-area: t; cursor: default; }
       .humidity {     grid-area: h; cursor: default; }
-      .alarm {        grid-area: a; position: relative; width: 50%; }
-      .locked {       grid-area: a; position: relative; width: 50%; left: 50%; }
+      .alarm {        grid-area: al; }
+      .locked {       grid-area: lock; }
       .back_to_center {grid-area: bc; }
 
       .hide,
