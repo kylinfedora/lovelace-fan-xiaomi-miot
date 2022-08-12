@@ -151,11 +151,11 @@ class fanXiaomiMiotCard extends LitElement {
           state: ['off', 'on'],
           icon: ['mdi:lock-open-variant','mdi:lock-open']
         },
-        back_to_center: {
-          prop: 'dm_service.back_to_center',
-          value: true,
-          icon: 'mdi:backup-restore',
-        },
+//        back_to_center: {
+//          prop: 'dm_service.back_to_center',
+//          value: true,
+//          icon: 'mdi:backup-restore',
+//        },
       },
       dmaker_fan_p5: {
         power: {
