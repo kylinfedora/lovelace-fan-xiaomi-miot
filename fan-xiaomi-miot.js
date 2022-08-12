@@ -151,11 +151,11 @@ class fanXiaomiMiotCard extends LitElement {
           state: ['off', 'on'],
           icon: ['mdi:lock-open-variant','mdi:lock-open']
         },
-//        back_to_center: {
-//          prop: 'dm_service.back_to_center',
-//          value: true,
-//          icon: 'mdi:backup-restore',
-//        },
+        back_to_center: {
+          prop: 'dm_service.back_to_center',
+          value: true,
+          icon: 'mdi:backup-restore',
+        },
       },
       dmaker_fan_p5: {
         power: {
@@ -463,7 +463,7 @@ class fanXiaomiMiotCard extends LitElement {
         display: grid;
         grid-template-rows: var(--card--grid-rows, min-content, 30px, 30px, 30px);
         grid-template-columns: var(--card--grid-columns, repeat(5, 1fr));
-        grid-template-areas: var(--card--grid-areas, "n n n n n" "p s hs ha t" "o m vs va h");
+        grid-template-areas: var(--card--grid-areas, "n n n n bc" "p s hs ha t" "o m vs va h");
         gap: var(--card-grid-gap, 6px 6px);
         align-items: center;
         place-content: space-between;
@@ -537,7 +537,7 @@ class fanXiaomiMiotCard extends LitElement {
       .humidity {     grid-area: h; cursor: default; }
       .alarm {        grid-area: a; position: relative; width: 50%; }
       .locked {       grid-area: a; position: relative; width: 50%; left: 50%; }
-      // .back_to_center {grid-area: bc; }
+      .back_to_center {grid-area: bc; }
 
       .hide,
       .state {
