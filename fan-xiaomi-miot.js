@@ -511,7 +511,7 @@ class fanXiaomiMiotCard extends LitElement {
         display: grid;
         grid-template-rows: var(--card--grid-rows, min-content, 30px, 30px, 30px);
         grid-template-columns: var(--card--grid-columns, repeat(5, 1fr));
-        grid-template-areas: var(--card--grid-areas, "n n n n n" "p s hs ha t" "o m vs va h" "ao aot af aft a");
+        grid-template-areas: var(--card--grid-areas, "n n n n n" "p s hs ha t" "o m vs va h" "lock al bc");
         gap: var(--card-grid-gap, 6px 6px);
         align-items: center;
         place-content: space-between;
@@ -581,16 +581,18 @@ class fanXiaomiMiotCard extends LitElement {
       .vswing_angle { grid-area: va; }
       .swing_down {   grid-area: va; position: relative; width: 50%; }
       .swing_up {     grid-area: va; position: relative; width: 50%; left: 50%; }
-      .auto_on {      grid-area: ao; }
-      .auto_on_temp_minus {grid-area: aot; position: relative; width: 50%; }
-      .auto_on_temp_plus  {grid-area: aot; position: relative; width: 50%; left: 50%; }
-      .auto_off {     grid-area: af; }
-      .auto_off_temp_minus{grid-area: aft; position: relative; width: 50%; }
-      .auto_off_temp_plus {grid-area: aft; position: relative; width: 50%; left: 50%; }
+      // .auto_on {      grid-area: ao; }
+      // .auto_on_temp_minus {grid-area: aot; position: relative; width: 50%; }
+      // .auto_on_temp_plus  {grid-area: aot; position: relative; width: 50%; left: 50%; }
+      // .auto_off {     grid-area: af; }
+      // .auto_off_temp_minus{grid-area: aft; position: relative; width: 50%; }
+      // .auto_off_temp_plus {grid-area: aft; position: relative; width: 50%; left: 50%; }
       .temperature  { grid-area: t; cursor: default; }
       .humidity {     grid-area: h; cursor: default; }
-      .alarm {        grid-area: a; position: relative; width: 50%; }
-      .locked {       grid-area: a; position: relative; width: 50%; left: 50%; }
+      // .alarm {        grid-area: a; position: relative; width: 50%; }
+      // .locked {       grid-area: a; position: relative; width: 50%; left: 50%; }
+      .alarm {        grid-area: al; }
+      .locked {       grid-area: lock; }
       .back_to_center {grid-area: bc; }
 
       .hide,
