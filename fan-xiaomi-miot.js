@@ -156,6 +156,54 @@ class fanXiaomiMiotCard extends LitElement {
           value: true,
           icon: 'mdi:backup-restore',
         },
+                auto_on: {
+          prop: 'dm_service.on',
+          value: false,
+          state: ['off', 'on'],
+          icon: 'mdi:fan-auto',
+          label: 'auto_on_temp_minus'
+        },
+        auto_on_temp_minus: {
+          prop: 'dm_service.temperature',
+          value: 15,
+          min: 15,
+          max: 36,
+          step: 1,
+          icon: 'mdi:chevron-down',
+          backward: true
+        },
+        auto_on_temp_plus: {
+          prop: 'dm_service.temperature',
+          value: 15,
+          min: 15,
+          max: 36,
+          step: 1,
+          icon: 'mdi:chevron-up',
+        },
+        auto_off: {
+          prop: 'dm_service.off',
+          value: false,
+          state: ['off', 'on'],
+          icon: 'mdi:fan-off',
+          label: 'auto_off_temp_minus'
+        },
+        auto_off_temp_minus: {
+          prop: 'dm_service-8.temperature',
+          value: 14,
+          min: 14,
+          max: 35,
+          step: 1,
+          icon: 'mdi:chevron-down',
+          backward: true
+        },
+        auto_off_temp_plus: {
+          prop: 'dm_service-8.temperature',
+          value: 14,
+          min: 14,
+          max: 35,
+          step: 1,
+          icon: 'mdi:chevron-up',
+        },
       },
       dmaker_fan_p5: {
         power: {
@@ -520,9 +568,9 @@ class fanXiaomiMiotCard extends LitElement {
       .title {        grid-area: n; color: var(--primary-text-color) }
       .power {        grid-area: p; }
       .mode {         grid-area: m; }
-      // .speed {        grid-area: s; }
-      .speed_down {   grid-area: sd; }
-      .speed_up {     grid-area: su; }
+      .speed {        grid-area: s; }
+      .speed_down {   grid-area: s; position: relative; width: 50%; }
+      .speed_up {     grid-area: s; position: relative; width: 50%; left: 50%;}
       .speed_slider { grid-area: n; opacity: 0.5; }
       .off_delay_time { grid-area: o; }
       .hswing {       grid-area: hs; }
@@ -533,11 +581,17 @@ class fanXiaomiMiotCard extends LitElement {
       .vswing_angle { grid-area: va; }
       .swing_down {   grid-area: va; position: relative; width: 50%; }
       .swing_up {     grid-area: va; position: relative; width: 50%; left: 50%; }
+      .auto_on {      grid-area: ao; }
+      .auto_on_temp_minus {grid-area: aot; position: relative; width: 50%; }
+      .auto_on_temp_plus  {grid-area: aot; position: relative; width: 50%; left: 50%; }
+      .auto_off {     grid-area: af; }
+      .auto_off_temp_minus{grid-area: aft; position: relative; width: 50%; }
+      .auto_off_temp_plus {grid-area: aft; position: relative; width: 50%; left: 50%; }
       .temperature  { grid-area: t; cursor: default; }
       .humidity {     grid-area: h; cursor: default; }
-      .alarm {        grid-area: al; }
-      .locked {       grid-area: lock; }
-      .back_to_center {grid-area: bc; }
+      .alarm {        grid-area: a; position: relative; width: 50%; }
+      .locked {       grid-area: a; position: relative; width: 50%; left: 50%; }
+      .back_to_center {grid-area: bc; position: relative; width: 50%; }
 
       .hide,
       .state {
