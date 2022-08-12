@@ -33,7 +33,7 @@ class fanXiaomiMiotCard extends LitElement {
   async setBtns() {
     
     this.models = {
-      dmaker_fan_p220: {
+      dmaker_fan_p28: {
         power : {
           prop: 'fan.on',
           value: false,
@@ -128,13 +128,13 @@ class fanXiaomiMiotCard extends LitElement {
           icon: 'mdi:chevron-right',
         },
         temperature: {
-          prop: 'temperature-9-1',
+          prop: 'environment.temperature',
           value: 1,
           icon: 'mdi:thermometer',
           click: ''
         },
         humidity: {
-          prop: 'relative_humidity-9-2',
+          prop: 'environment.relative_humidity',
           value: 1,
           icon: 'mdi:water-percent',
           click: ''
@@ -150,6 +150,11 @@ class fanXiaomiMiotCard extends LitElement {
           value: false,
           state: ['off', 'on'],
           icon: ['mdi:lock-open-variant','mdi:lock-open']
+        },
+        back_to_center: {
+          prop: 'dm_service.back_to_center',
+          value: true,
+          icon: 'mdi:backup-restore',
         },
         auto_on: {
           prop: 'dm_service.on',
@@ -285,7 +290,7 @@ class fanXiaomiMiotCard extends LitElement {
       }
     }
 
-    const model = this.config.model ?? 'dmaker_fan_p220';
+    const model = this.config.model ?? 'dmaker_fan_p28';
     this.btns = this.models[model];
   
   }
@@ -295,7 +300,7 @@ class fanXiaomiMiotCard extends LitElement {
   render() {
     const state = this.hass.states[this.config.entity];
     const stateStr = state ? state.state : 'unavailable';
-    const model = this.config.model ?? 'dmaker_fan_p220';
+    const model = this.config.model ?? 'dmaker_fan_p28';
     if (stateStr == 'unavailable') {
       return html`<div class="not-found">Entity ${this.config.entity} not found.</div>`;
     } else {
@@ -475,7 +480,7 @@ class fanXiaomiMiotCard extends LitElement {
       });
     }
 
-    // 속도 조절시 전원이 꺼져있으면 켜기
+    // 调速时发现风扇处于关闭状态时打开风扇
     if (btn.name == 'speed_slider' && state.attributes[this.btns.power.prop] == false) {
       this._toggle('click', state, this.btns.power, true);
     }
@@ -586,6 +591,7 @@ class fanXiaomiMiotCard extends LitElement {
       .humidity {     grid-area: h; cursor: default; }
       .alarm {        grid-area: a; position: relative; width: 50%; }
       .locked {       grid-area: a; position: relative; width: 50%; left: 50%; }
+      .back_to_center {grid-area: bc; }
 
       .hide,
       .state {
@@ -715,7 +721,7 @@ class fanXiaomiMiotCard extends LitElement {
 
 }
 customElements.define("fanxiaomimiot-card", fanXiaomiMiotCard);
-console.info(`%cFAN-XIAOMI-MIOT v0.0.10 IS INSTALLED`,"color: green; font-weight: bold","");
+console.info(`%cFAN-XIAOMI-MIOT v0.0.11 IS INSTALLED`,"color: green; font-weight: bold","");
 
 
 // class fanXiaomiMiotCardEditor extends LitElement {
